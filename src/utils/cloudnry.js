@@ -11,9 +11,9 @@ cloudinary.config({
 const uploadCloudnry=async (localFilePath)=>{
     try{
         if(!localFilePath) return null;
-        cloudinary.uploader.upload(localFilePath,{resource_type:"auto"})
+        const response=await cloudinary.uploader.upload(localFilePath,{resource_type:"auto"})
         // console.log("sile is uploaded on cloudinry",response.url);
-        fs.unlinkSync()
+        fs.unlinkSync(localFilePath)
         return response;
     }catch(error){
         fs.unlinkSync(localFilePath)

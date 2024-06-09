@@ -24,7 +24,7 @@ const userSchema=new Schema({
         trim:true,
         index:true
     },
-    avata:{
+    avatar:{
         type:String,
         required:true
     },
